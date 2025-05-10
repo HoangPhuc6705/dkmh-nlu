@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="h-dvh flex overflow-hidden bg-white-theme">
+    <div className="h-dvh flex overflow-hidden bg-white">
       <Sidebar
         open={isOpen}
         onOpen={handleIsOpen}

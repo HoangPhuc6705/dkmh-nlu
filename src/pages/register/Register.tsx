@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./RegButton";
 import { registList, Subject } from "./data";
 import SearchBar from "../../components/SearchBar";
@@ -13,6 +13,7 @@ import { FaFileExcel } from "react-icons/fa";
  */
 const Register: React.FC = () => {
   const [subject, setSubject] = useState<Subject[]>([]);
+  const [total, setTotal] = useState<number>(0);
 
   function handleAddSubject(newSubject: Subject): void {
     if (!newSubject.regist) {
@@ -23,6 +24,10 @@ const Register: React.FC = () => {
       setSubject(subject.filter((subj) => subj.id !== newSubject.id));
     }
   }
+  
+  useEffect(() => {
+    setTotal(subject.reduce((ac, s) => ac + s.credits, 0));
+  }, [subject])
 
   return (
     <div className="flex flex-col">
@@ -166,6 +171,22 @@ const Register: React.FC = () => {
                 </tr>
               </React.Fragment>
             ))}
+            <tr className="bg-nonglam text-stone-50">
+              <td 
+              colSpan={2}
+              className="font-bold text-left px-4 py-2">
+                Tổng số tín chỉ
+              </td>
+              <td 
+              colSpan={1}
+              className="font-bold text-center px-4 py-2">
+                {total}
+              </td>
+              <td 
+              colSpan={5}
+              className="font-bold text-left px-4 py-2">
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

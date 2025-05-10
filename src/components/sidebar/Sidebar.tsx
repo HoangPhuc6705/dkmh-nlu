@@ -21,6 +21,7 @@ import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import Icon from "../icon/Icon";
 import { Homepage, News, Program, Register } from "../../pages/router-page";
+import Tuitition from "../../pages/tuitition/Tuitition";
 
 interface navbarDefine {
   name: string;
@@ -48,7 +49,7 @@ const navbar: navbarDefine[] = [
     name: "Học phí",
     path: "/tuition",
     icon: <MdAttachMoney />,
-    element: <></>,
+    element: <Tuitition />,
   },
   {
     name: "Thời khoá biểu",

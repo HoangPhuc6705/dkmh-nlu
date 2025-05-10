@@ -58,7 +58,7 @@ function Header(props: HeaderProps) {
             alt="nonglam"
             className="size-6"
           />
-          <h3 className="font-roboto text-stone-500">NLU</h3>
+          <h3 className="font-roboto text-stone-700">NLU</h3>
         </div>
         <h4 className="font-semibold text-stone-700 select-none max-sm:text-[16px] max-sm:hidden">
           <Routes>

@@ -1,9 +1,12 @@
 import React from "react";
 import { programsEducation } from "./data";
 import { FaFileExcel, FaPrint } from "react-icons/fa";
-import { MdCheck, MdCheckCircle } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 
 const Program: React.FC = () => {
+
+  const creditsSum: number = programsEducation.flatMap(s => s.subjects).reduce((sum, sub) => sum + sub.credit, 0);
+
   const CheckIcon: React.FC<{ icon: React.ReactNode }> = ({ icon }) => {
     return (
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -98,6 +101,22 @@ const Program: React.FC = () => {
                 ))}
               </React.Fragment>
             ))}
+            <tr className="bg-nonglam text-stone-50">
+              <td 
+              colSpan={2}
+              className="font-bold text-left px-4 py-2">
+                Tổng số tín chỉ
+              </td>
+              <td 
+              colSpan={1}
+              className="font-bold text-center px-4 py-2">
+                {creditsSum}
+              </td>
+              <td 
+              colSpan={5}
+              className="font-bold text-left px-4 py-2">
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

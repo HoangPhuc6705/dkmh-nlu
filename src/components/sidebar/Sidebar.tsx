@@ -22,6 +22,7 @@ import { useEffect, useState } from "react";
 import Icon from "../icon/Icon";
 import { Homepage, News, Program, Register } from "../../pages/router-page";
 import Tuitition from "../../pages/tuitition/Tuitition";
+import Scheduler from "../../pages/scheduler/Scheduler";
 
 interface navbarDefine {
   name: string;
@@ -55,7 +56,7 @@ const navbar: navbarDefine[] = [
     name: "Thời khoá biểu",
     path: "/scheduler",
     icon: <MdCalendarMonth />,
-    element: <></>,
+    element: <Scheduler />,
   },
   { name: "Lịch thi", path: "/exam", icon: <MdBallot />, element: <></> },
 ];
@@ -79,11 +80,11 @@ interface SidebarProps {
 }
 
 function Sidebar(props: SidebarProps) {
-  
+
   const location = useLocation();
   const path = location.pathname;
 
-  const [current, setCurrent] = useState<string|undefined>(() => {
+  const [current, setCurrent] = useState<string | undefined>(() => {
     const currentNav: string | undefined = nav.find((item) => item.path === path)?.name;
     return currentNav;
   });
@@ -134,18 +135,16 @@ function Sidebar(props: SidebarProps) {
               }}
             >
               <li
-                className={`p-[14px] flex items-center gap-6 text-sm rounded-md transition mb-0.5 ${
-                  current === value.name
-                    ? "bg-nonglam text-stone-50"
-                    : "hover:bg-stone-400/20 hover:rounded-md"
-                }`}
+                className={`p-[14px] flex items-center gap-6 text-sm rounded-md transition mb-0.5 ${current === value.name
+                  ? "bg-nonglam text-stone-50"
+                  : "hover:bg-stone-400/20 hover:rounded-md"
+                  }`}
               >
                 <div
-                  className={`*:size-5 ${
-                    current === value.name
-                      ? "*:text-stone-50"
-                      : "*:text-stone-500"
-                  }`}
+                  className={`*:size-5 ${current === value.name
+                    ? "*:text-stone-50"
+                    : "*:text-stone-500"
+                    }`}
                 >
                   {value.icon}
                 </div>
@@ -166,18 +165,16 @@ function Sidebar(props: SidebarProps) {
               }}
             >
               <li
-                className={`p-[14px] flex items-center gap-6 text-sm rounded-md transition mb-0.5 ${
-                  current === value.name
-                    ? "bg-nonglam text-stone-50"
-                    : "hover:bg-stone-400/20 hover:rounded-md"
-                }`}
+                className={`p-[14px] flex items-center gap-6 text-sm rounded-md transition mb-0.5 ${current === value.name
+                  ? "bg-nonglam text-stone-50"
+                  : "hover:bg-stone-400/20 hover:rounded-md"
+                  }`}
               >
                 <div
-                  className={`*:size-5 ${
-                    current === value.name
-                      ? "*:text-stone-100"
-                      : "*:text-stone-500"
-                  }`}
+                  className={`*:size-5 ${current === value.name
+                    ? "*:text-stone-100"
+                    : "*:text-stone-500"
+                    }`}
                 >
                   {value.icon}
                 </div>

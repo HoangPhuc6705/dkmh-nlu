@@ -3,5 +3,6 @@
 @theme {
   --font-roboto: "Roboto", sans-serif;
   --color-nonglam: #37bd74;
+  --color-nonglam-100: #87ecb5;
   --color-white-theme: #FFFDF6;
 }

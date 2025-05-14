@@ -2,6 +2,10 @@ import React from "react";
 import { tuititionList, Tuitition } from "./data";
 import { CgCheckO } from "react-icons/cg";
 
+const insertDot = (s: string): string => {
+    return s.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 const Paid: React.FC<{}> = ({ }) => {
     const paidList: Tuitition[] = tuititionList.filter((value) => value.state);
     const trName: string[] = [
@@ -10,16 +14,10 @@ const Paid: React.FC<{}> = ({ }) => {
         'Thời gian',
         'Trạng thái'
     ]
-    const total = paidList.reduce((sum, curr) => sum + curr.total, 0);
-    const formatNumber = (n: number): string => {
-        let s: string = n.toString();
-        let index = s.length ;
 
-        return s;
-    }
-    const insertDot = (s: string, index: number) => {
-        return s.slice(0, index) + "." + s.slice(index);
-    }
+
+    let total: string = paidList.reduce((sum, curr) => sum + curr.total, 0).toString();
+    total = insertDot(total);
 
     return (
         <div className="font-roboto">
@@ -56,7 +54,7 @@ const Paid: React.FC<{}> = ({ }) => {
                                 colSpan={1}
                                 className="font-semibold bg-nonglam text-white px-4 py-2 *:text-center
                                 text-center">
-                                {formatNumber(total)} VND
+                                {total} VND
                             </td>
                             <td
                                 colSpan={2}

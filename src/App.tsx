@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // import { useMediaQuery } from "react-responsive";
 import "./App.css";
 import Header from "./components/header/Header";

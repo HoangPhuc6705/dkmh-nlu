@@ -62,12 +62,6 @@ const navbar: navbarDefine[] = [
 ];
 
 const secondNavbar: navbarDefine[] = [
-  {
-    name: "Sinh viên",
-    path: "/student",
-    icon: <MdAccountCircle />,
-    element: <></>,
-  },
   { name: "Cài đặt", path: "/setting", icon: <MdSettings />, element: <></> },
   { name: "Liên hệ", path: "/contact", icon: <MdFavorite />, element: <></> },
 ];

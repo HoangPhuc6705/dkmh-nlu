@@ -13,7 +13,7 @@ import { MdReceipt } from 'react-icons/md';
 const Tuitition: React.FC<{}> = () => {
 
 
-  return <div className='flex flex-col gap-3'>
+  return <div className='flex flex-col gap-3 text-sm'>
     <WillPaid />
     <Paid />
     <div className='flex flex-3'>

@@ -108,7 +108,7 @@ function Header(props: HeaderProps) {
                 }
               />
             </div>
-            {!mailBox || ( 
+            {!mailBox || (
               <div ref={mailboxRef}>
                 <NotificationsList />
               </div>
@@ -118,7 +118,7 @@ function Header(props: HeaderProps) {
           <div>
             <div
               className="relative overflow-visible"
-              onClick={() => {}}
+              onClick={() => { }}
             >
               <Icon
                 icon={<MdNotifications />}
@@ -133,7 +133,7 @@ function Header(props: HeaderProps) {
             </div>
           </div>
 
-          <Icon icon={<MdDarkMode />} />
+          <Icon imageUri={"https://i.pinimg.com/736x/ea/ff/e0/eaffe081617efd3c77e702d127180686.jpg"} />
         </div>
       </div>
     </header>

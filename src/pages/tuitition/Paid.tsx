@@ -2,9 +2,12 @@ import React from "react";
 import { tuititionList, Tuitition } from "./data";
 import { CgCheckO } from "react-icons/cg";
 
-const insertDot = (s: string): string => {
+// chatgpt with love
+// regex
+export const insertDot = (s: string): string => {
     return s.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
 
 const Paid: React.FC<{}> = ({ }) => {
     const paidList: Tuitition[] = tuititionList.filter((value) => value.state);
@@ -37,7 +40,7 @@ const Paid: React.FC<{}> = ({ }) => {
                                 key={key}
                                 className="border-y border-stone-300 *:px-4 *:py-2">
                                 <td>{value.name}</td>
-                                <td className="text-center">{value.total} VND</td>
+                                <td className="text-center">{insertDot(value.total.toString())} VND</td>
                                 <td className="text-center">{value.date}</td>
                                 <td className="flex justify-center">
                                     <CgCheckO className="text-nonglam" />

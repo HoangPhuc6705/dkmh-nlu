@@ -1,6 +1,7 @@
 import React from "react";
 import { tuititionList, Tuitition } from "./data";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
+import { insertDot } from "./Paid";
 
 const WillPaid: React.FC<{}> = ({ }) => {
     const willpaid: Tuitition[] = tuititionList.filter((value) => !value.state);
@@ -24,7 +25,7 @@ const WillPaid: React.FC<{}> = ({ }) => {
                                 key={key}
                                 className="border-y border-stone-300 *:px-4 *:py-2">
                                 <td>{value.name}</td>
-                                <td className="text-center">{value.total} VND</td>
+                                <td className="text-center">{ insertDot( value.total.toString())} VND</td>
                                 <td className="flex justify-center cursor-pointer">
                                     <MdCheckBoxOutlineBlank className="text-nonglam" />
                                 </td>
